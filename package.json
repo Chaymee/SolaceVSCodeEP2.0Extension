@@ -1,0 +1,77 @@
+{
+  "name": "solaceeventportal",
+  "displayName": "solaceEventPortal",
+  "description": "An extension for VSCode that brings the power of Event Portal right into your text editor experience.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:solace.eventportal"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "eventPortalExplorer",
+          "title": "Event Portal Explorer",
+          "icon": "resources/eventportal.svg"
+        }
+      ]
+    },
+    "views": {
+      "eventPortalExplorer": [
+        {
+          "id": "applicationDomains",
+          "name": "Application Domains"
+        },
+        {
+          "id": "applications",
+          "name": "Applications"
+        },
+        {
+          "id": "events",
+          "name": "Events"
+        },
+        {
+          "id": "schemas",
+          "name": "Schemas"
+        }
+      ]
+    },
+		"commands": [
+			{
+				"command": "solace.eventportal",
+				"title": "Event Portal"
+			}
+		]
+	},
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.71.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@solace-community/eventportal": "^1.4.0"
+  }
+}
