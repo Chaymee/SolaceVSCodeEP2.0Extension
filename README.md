@@ -2,6 +2,16 @@
 
 This is the README for your extension "solaceeventportal". After writing up a brief description, we recommend including the following sections.
 
+# How to develop the plugin
+1. Pull the Repo
+2. Open in VSCode
+3. Create a src/token.js file and export a epToken variable with your Event Portal 2.0 token set. 
+4. Run the project in debug mode by pressing F5.
+5. A 2nd developer window of VSCode should open, issue the `Event Portal` command in the command pallete (cmd + shift + p)
+6. Select the 6th element down in the VSCode Left side tool bar titled `Event Portal Explorer`
+7. Explore your application Domains, those domains applications, events and schemas.
+8. Quit the running process and start again, I have broker the process killing code so the rerun function does not currently work
+
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
